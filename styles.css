@@ -7,13 +7,27 @@ h1 {
     text-align: center;
     font-size: 50px;
     font-family: monospace;
+    color: burlywood;
+}
+
+.boarder {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+button {
+    margin-bottom: 5px;
+    padding: 10px;
 }
 
 .container {
     margin: 0 auto;
     display: flex; 
-    gap: 1px;
-    width: 800px;
+    gap: 2px;
+    width: 960px;
     height: 50px;
 
 }
