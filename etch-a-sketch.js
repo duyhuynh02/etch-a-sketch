@@ -1,6 +1,6 @@
 //GLOBAL VARIABLES 
 const body = document.querySelector('body');
-const boardSizeBtn = document.getElementById('#board-size');
+const boardSizeBtn = document.getElementById('board-size');
 const rainbowBtn = document.getElementById('random-colors');
 const resetBtn = document.getElementById('reset');
 
@@ -39,14 +39,13 @@ function createNewBoard() {
     let totalRows = size; 
     let totalColumns = size; 
 
-    //remove all the classes. 
+    //remove all the grid item in containers. 
     const containers = document.querySelectorAll('.container');
-    // console.log(containers);
     containers.forEach((container) => {
         body.removeChild(container);
     })
 
-    //add new class 
+    //THen create newBoard with hoverEffect 
     createBoard(totalRows, totalColumns)
     hoverEffect(); 
 
@@ -62,8 +61,7 @@ function changeRainbowColor() {
 
     //Initial color is black; 
     gridList.forEach((gridItem) => {
-        //Add random color in here. 
-        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); //Add one line to have random color in here. 
         gridItem.addEventListener("mouseenter", () => {
             gridItem.style.backgroundColor = randomColor;
         })
@@ -72,14 +70,13 @@ function changeRainbowColor() {
 }
 
 function main() {
-    /* First create the initial board with 16x16 */
     createBoard(); 
-    /* Automatically have hoverEffect */
     hoverEffect(); 
     /* Choose size when clicking the button */
     boardSizeBtn.addEventListener('click', createNewBoard);
     /* Choose rainbow color when needed */
     rainbowBtn.addEventListener('click', changeRainbowColor);
+    /* Reset button */
     resetBtn.addEventListener('click', resetBoard);
 }
 
